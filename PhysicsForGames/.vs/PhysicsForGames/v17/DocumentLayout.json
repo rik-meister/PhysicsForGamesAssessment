@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\PhysObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\PhysObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\PhysObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\PhysObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\DemoWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\DemoWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\World.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\World.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\DemoWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\DemoWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\World.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11C69D91-FF74-447E-A066-31A1C7690CE5}|CustomPhysics\\CustomPhysics.vcxproj|solutionrelative:CustomPhysics\\World.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\main.cpp",
+              "RelativeDocumentMoniker": "CustomPhysics\\main.cpp",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\main.cpp",
+              "RelativeToolTip": "CustomPhysics\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T18:05:03.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "World.h",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\World.h",
+              "RelativeDocumentMoniker": "CustomPhysics\\World.h",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\World.h",
+              "RelativeToolTip": "CustomPhysics\\World.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T18:55:50.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "World.cpp",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\World.cpp",
+              "RelativeDocumentMoniker": "CustomPhysics\\World.cpp",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\World.cpp",
+              "RelativeToolTip": "CustomPhysics\\World.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T19:04:58.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DemoWorld.h",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\DemoWorld.h",
+              "RelativeDocumentMoniker": "CustomPhysics\\DemoWorld.h",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\DemoWorld.h",
+              "RelativeToolTip": "CustomPhysics\\DemoWorld.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T19:37:10.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DemoWorld.cpp",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\DemoWorld.cpp",
+              "RelativeDocumentMoniker": "CustomPhysics\\DemoWorld.cpp",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\DemoWorld.cpp",
+              "RelativeToolTip": "CustomPhysics\\DemoWorld.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T19:39:05.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PhysObject.h",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\PhysObject.h",
+              "RelativeDocumentMoniker": "CustomPhysics\\PhysObject.h",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\PhysObject.h",
+              "RelativeToolTip": "CustomPhysics\\PhysObject.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T19:46:36.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhysObject.cpp",
+              "DocumentMoniker": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\PhysObject.cpp",
+              "RelativeDocumentMoniker": "CustomPhysics\\PhysObject.cpp",
+              "ToolTip": "C:\\Users\\s258033\\Documents\\GitHub\\PhysicsForGamesAssessment\\PhysicsForGames\\CustomPhysics\\PhysObject.cpp",
+              "RelativeToolTip": "CustomPhysics\\PhysObject.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T19:56:33.67Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "706fdef061ed8412ec241f9e49f1badf57dd73ef9d7fadbd6612a78f1c42f03c8ab03251fb91d0523bfee757fcf8932b8bafc274c6bc42f0bfc4c17304af1ef0"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/raysan5/raylib@6.2",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "raysan5/raylib"
+}
+  ]
+}
