@@ -1,11 +1,16 @@
-#include "DemoWorld.h"
+#include <memory>
 
 #include <raylib.h>
 
+#include "DemoWorld.h"
+#include "Shapes.h"
 
 int main(void)
 {
-    World* Game = new DemoWorld();
+
+    // only used here
+    // will destroy object when ptr falls out of scope
+    std::unique_ptr<World> Game = std::make_unique<DemoWorld>();
 
     Game->Init();
 
@@ -24,7 +29,8 @@ int main(void)
 
     Game->Exit();
 
-    delete Game;
+    // manually destroys the underlying object
+    // Game.release();
 
     return 0;
 }

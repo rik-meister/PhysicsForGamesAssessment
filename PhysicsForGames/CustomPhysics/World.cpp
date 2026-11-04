@@ -1,9 +1,29 @@
 // include the header we are implementing
 #include "World.h"
 
+// compiler headers
+#include <iostream>
+#include <unordered_map>
 
 // third party dependencies
 #include <raylib.h>
+
+// project
+#include "EnumUtils.h"
+#include "PhysObject.h"
+
+// function pointers
+
+// function pointer to a shape-shape collision detection function
+using CollisionFunc = bool (*) (const Vector2&, const Shape&, const Vector2&, const Shape&);
+
+// Lookup table for pairs of Shapes (and get its collision detection func back)
+using CollisionMap = std::unordered_map<ShapeType, CollisionFunc>;
+
+// static linkage (i.e., only available here)
+
+// lookup map for collision detection functions
+CollisionMap CollisionCheckers;
 
 void World::Init()
 {
@@ -17,6 +37,9 @@ void World::Init()
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
+    // Setup my collision detection functions
+    //---------------------------------------
+    CollisionCheckers[ShapeType::CIRCLE | ShapeType::CIRCLE] = CheckCircleCircle;
 
     // Do initialization stuff after raylib
     OnInit();
@@ -36,6 +59,45 @@ void World::TickFixed()
 {
     AccumulatedFixedTime -= TargetFixedStep;
 
+    // integrate forces and velocity
+    for (auto const PObj : PhysObjects)
+    {
+        PObj->AddAccel({ 0.0f, GravityY });
+        PObj->TickPhys(TargetFixedStep);
+    }
+
+    // check for collisions
+    for (auto PObjA : PhysObjects)
+    {
+        for (auto PObjB : PhysObjects)
+        {
+            // skip self collision
+            if (PObjA == PObjB) { continue; }
+            // skip if an object lacks a collider
+            if (PObjA->GetShape().Type == ShapeType::NONE || 
+                PObjB->GetShape().Type == ShapeType::NONE) { continue; }
+
+            // reorder my pointers so the lower type always first
+            std::shared_ptr<PhysObject> Lhs = PObjA;
+            std::shared_ptr<PhysObject> Rhs = PObjB;
+
+            // HACK: check the type and swaap if necessary
+            if (PObjA->GetShape().Type > PObjB->GetShape().Type)
+            {
+                Lhs = PObjB;
+                Rhs = PObjA;
+            }
+
+            ShapeType PairType = Lhs->GetShape().Type | Rhs->GetShape().Type;
+            bool bIsColliding = CollisionCheckers[PairType](Lhs->GetPosition(), Lhs->GetShape(), Rhs->GetPosition(), Rhs->GetShape());
+
+            if (bIsColliding)
+            {
+                std::cout << "omg collision" << std::endl;
+            }
+        }
+    }
+
     OnTickFixed();
 }
 
@@ -46,7 +108,12 @@ void World::Draw()
 
     ClearBackground(RAYWHITE);
 
-    DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+    DrawText("Bing Bong", 350, 200, 20, LIGHTGRAY);
+
+    for (auto const PObj : PhysObjects)
+    {
+        PObj->Draw();
+    }
 
     OnDraw();
 
@@ -75,3 +142,12 @@ bool World::ShouldTickFixed() const
 {
     return AccumulatedFixedTime >= TargetFixedStep;
 }
+
+std::weak_ptr<PhysObject> World::SpawnPhysObject()
+{
+    PhysObjects.emplace_back(std::make_shared<PhysObject>());
+
+    return PhysObjects[PhysObjects.size() - 1];
+}
+
+

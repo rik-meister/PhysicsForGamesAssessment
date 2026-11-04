@@ -1,15 +1,22 @@
 #pragma once
 
+#include <vector> // dnamic array (i.e., a TArray)
+#include <memory> // for smart pointers
 // public - protected - private
 // variables first, followed by functions
+
+class PhysObject;
 
 class World
 {
 public:
 	float TargetFixedStep = 1.0f / 30.0f;
+	float GravityY = 9.81f;
 
 private:
 	float AccumulatedFixedTime = 0.0f;
+
+	std::vector<std::shared_ptr<PhysObject>> PhysObjects;
 
 public:
 	void Init();
@@ -26,6 +33,9 @@ public:
 	// @brief Indicates the game is due for running TickFixed()
 	// @return True if we should call TickFixed() in next update-draw loop, otherwise false
 	bool ShouldTickFixed() const;
+
+	std::weak_ptr<PhysObject> SpawnPhysObject();
+	// PhysObject* SpawnPhysObjectUnsafe();
 
 protected:
 
