@@ -25,6 +25,8 @@ void PhysObject::Draw()
 	DrawLineV(Position, XRay, RED);
 	DrawLineV(Position, YRay, GREEN);
 
+	Color DrawColor = bWasHitThisFrame ? RED : GRAY;
+
 	switch (Collider.Type)
 	{
 	case ShapeType::NONE:
@@ -95,4 +97,44 @@ void PhysObject::AddImpulse(const Vector2& Impulse)
 void PhysObject::AddVelocityChange(const Vector2& VelChange)
 {
 	PendingImpulses += VelChange;
+}
+
+float ResolveCollision(const Vector2& VelA, float MassA, const Vector2& VelB, float MassB, float Elasticity, const Vector2& Normal)
+{
+	// calculate relative velocity
+	Vector2 RelativeVel = VelA - VelB;
+
+	// calculate impulse magnitude
+	float ImpulseMag = Vector2DotProduct(-(1.f + Elasticity) * RelativeVel, Normal) /
+		Vector2DotProduct(Normal, Normal * (1.f / MassA + 1.f / MassB));
+
+	// return how strong these things should fly off
+	return ImpulseMag;
+}
+
+void ResolvePhysBodies(PhysObject& Lhs, PhysObject& Rhs, float Elasticity, const Vector2& Normal, float Pen)
+{
+	// do nothing if Pen is too small
+	if (Pen < 0.001f) { return; }
+
+	// Depenetrate colliding objects
+	
+	// halve it to apply half of the MTV to each object involved
+	Pen /= 2.0f;
+
+	// ensure they seperate enough
+	Pen += 0.05f;
+
+	Vector2 LhsNewPosition = Lhs.GetPosition() + Normal * Pen;
+	Vector2 RhsNewPosition = Rhs.GetPosition() - Normal * Pen;
+
+	Lhs.SetPosition(LhsNewPosition);
+	Rhs.SetPosition(RhsNewPosition);
+	
+	// Calculate and apply resolution impulse
+	float ImpulseMag = ResolveCollision(Lhs.GetVelocity(), Lhs.GetMass(), Rhs.GetVelocity(), Rhs.GetMass(), Elasticity, Normal);
+
+	Vector2 Impulse = ImpulseMag * Normal;
+	Lhs.AddImpulse(Impulse);
+	Rhs.AddImpulse(Impulse * -1.f);
 }

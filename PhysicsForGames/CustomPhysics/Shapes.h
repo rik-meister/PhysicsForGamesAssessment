@@ -33,3 +33,6 @@ struct Shape
 
 bool CheckCircleCircle(const Vector2& PosA, const Circle& CircleA, const Vector2& PosB, const Circle& CircleB);
 bool CheckCircleCircle(const Vector2& PosA, const Shape& CircleA, const Vector2& PosB, const Shape& CircleB);
+
+Vector2 DepenetrateCircleCircle(const Vector2& PosA, const Circle& CircleA, const Vector2& PosB, const Circle& CircleB, float& Pen);
+Vector2 DepenetrateCircleCircle(const Vector2& PosA, const Shape& CircleA, const Vector2& PosB, const Shape& CircleB, float& Pen);

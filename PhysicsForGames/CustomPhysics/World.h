@@ -35,7 +35,10 @@ public:
 	bool ShouldTickFixed() const;
 
 	std::weak_ptr<PhysObject> SpawnPhysObject();
+	void DestroyPhysObject(PhysObject* Target);
 	// PhysObject* SpawnPhysObjectUnsafe();
+
+	const std::vector<std::shared_ptr<PhysObject>>& GetPhysObjects() { return PhysObjects; }
 
 protected:
 

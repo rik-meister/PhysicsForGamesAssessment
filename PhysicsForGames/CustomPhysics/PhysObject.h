@@ -18,6 +18,8 @@ private:
 	Vector2 PendingForces = {};
 	Vector2 PendingImpulses = {};
 
+	bool bWasHitThisFrame = false;
+
 public:
 	void TickPhys(float Delta);
 
@@ -39,4 +41,13 @@ public:
 	void AddAccel(const Vector2& Accel);
 	void AddImpulse(const Vector2& Impulse);
 	void AddVelocityChange(const Vector2& VelChange);
+
+	virtual void NotifyHit(const Shape& MyShape, PhysObject* Other, const Shape& OtherShape, const Vector2& HitLocation, const Vector2& HitNormal, const Vector2& HitImpulse)
+	{
+		bWasHitThisFrame = true;
+	}
 };
+
+float ResolveCollision(const Vector2& VelA, float MassA, const Vector2& VelB, float MassB, float Elasticity, const Vector2& Normal);
+
+void ResolvePhysBodies(PhysObject& Lhs, PhysObject& Rhs, float Elasticity, const Vector2& Normal, float Pen);

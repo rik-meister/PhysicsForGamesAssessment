@@ -20,10 +20,19 @@ using CollisionFunc = bool (*) (const Vector2&, const Shape&, const Vector2&, co
 // Lookup table for pairs of Shapes (and get its collision detection func back)
 using CollisionMap = std::unordered_map<ShapeType, CollisionFunc>;
 
+// Function pointer to a shape-shape Depenetration function
+using DepenetrationFunc = Vector2(*) (const Vector2&, const Shape&, const Vector2&, const Shape&, float&);
+
+// Lookup table for pairs of Shapes (and get its Depenetration func back)
+using DepenetrationMap = std::unordered_map<ShapeType, DepenetrationFunc>;
+
 // static linkage (i.e., only available here)
 
 // lookup map for collision detection functions
 CollisionMap CollisionCheckers;
+
+// lookup map for depenetration functions
+DepenetrationMap CollisionDepenetrators;
 
 void World::Init()
 {
@@ -40,6 +49,7 @@ void World::Init()
     // Setup my collision detection functions
     //---------------------------------------
     CollisionCheckers[ShapeType::CIRCLE | ShapeType::CIRCLE] = CheckCircleCircle;
+    CollisionDepenetrators[ShapeType::CIRCLE | ShapeType::CIRCLE] = DepenetrateCircleCircle;
 
     // Do initialization stuff after raylib
     OnInit();
@@ -93,7 +103,14 @@ void World::TickFixed()
 
             if (bIsColliding)
             {
-                std::cout << "omg collision" << std::endl;
+                Lhs->NotifyHit(Lhs->GetShape(), Rhs.get(), Rhs->GetShape(), {}, {}, {});
+
+                float Pen = 0.0f;
+                Vector2 Dir = CollisionDepenetrators[PairType](Lhs->GetPosition(), Lhs->GetShape(), Rhs->GetPosition(), Rhs->GetShape(), Pen);
+
+                ResolvePhysBodies(*Lhs.get(), *Rhs.get(), 0.1f, Dir, Pen);
+
+                //std::cout << "omg collision" << std::endl;
             }
         }
     }
@@ -150,4 +167,13 @@ std::weak_ptr<PhysObject> World::SpawnPhysObject()
     return PhysObjects[PhysObjects.size() - 1];
 }
 
+void World::DestroyPhysObject(PhysObject* Target)
+{
+    // early exit if invalid
+    if (Target == nullptr) { return; }
+
+    PhysObjects.erase(std::remove_if(PhysObjects.begin(), PhysObjects.end(), [Target](const auto& Ptr) {
+        return Ptr.get() == Target;
+        }), PhysObjects.end());
+}
 
